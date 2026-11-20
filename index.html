@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://biblereality.jp/og.jpg">
 <meta name="theme-color" content="#05060a">
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Cormorant+Garamond:wght@500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet">
@@ -1012,10 +1012,8 @@ $$('.hero h1 .ln').forEach((ln,li)=>{
   }
   function load(){
     if(window.THREE){init();return}
-    const sc=document.createElement('script');
-    sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-    sc.onload=()=>{try{init()}catch(e){console.warn(e)}};
-    document.head.appendChild(sc);
+    /* three.js 0.187.0(ES module)。r128は、既知の脆弱性があるため、最新版へ更新しました */
+    import('https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.min.js').then(m=>{window.THREE=m;try{init()}catch(e){console.warn(e)}}).catch(e=>console.warn(e));
   }
   if('requestIdleCallback' in window)requestIdleCallback(load,{timeout:1500});else setTimeout(load,300);
 })();
