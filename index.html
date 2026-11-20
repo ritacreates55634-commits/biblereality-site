@@ -308,6 +308,11 @@ h2.title.topics-title{font-size:clamp(1.15rem,5.7vw,2.5rem)!important;line-heigh
 
 
 /* latest + archive */
+.ban{background:linear-gradient(180deg,#0b0912,var(--bg));padding:clamp(40px,6vw,70px) 0}
+.ban .shots{display:grid;grid-template-columns:1fr;gap:16px;margin-top:30px}
+@media(min-width:760px){.ban .shots{grid-template-columns:1fr 1fr;gap:20px}}
+.ban .shots figure{margin:0;border:1px solid rgba(214,177,96,.35);border-radius:10px;overflow:hidden;box-shadow:0 10px 34px rgba(0,0,0,.55)}
+.ban .shots img{display:block;width:100%;height:auto}
 .latest{background:linear-gradient(180deg,var(--bg),#0b0912)}
 .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--gut) 24px;margin-top:40px;scrollbar-width:thin;scrollbar-color:var(--gold3) #111}
 .rail::-webkit-scrollbar{height:6px}.rail::-webkit-scrollbar-thumb{background:var(--gold3);border-radius:9px}
@@ -746,6 +751,18 @@ footer{font-size:.88rem}
     <div class="th a4"><span class="no">Bible Reality 143</span><div class="t"><small>ソロモンの海 海底考古学の衝撃</small><span class="gold">明かされる<br>3000年前の真実</span></div><div class="dt">2026.10.7</div></div>
     <div class="th a5"><span class="no">Bible Reality 144</span><div class="t"><small>大逆転の世界史</small><span class="gold">地底からの<br>叫び声</span></div><div class="dt">2026.10.14</div></div>
     <div class="th a6"><span class="no">Bible Reality 145</span><div class="t"><span class="gold">真の勝利者<br>は誰か？</span></div><div class="dt">最新回</div></div>
+  </div>
+</section>
+
+<!-- BAN -->
+<section class="ban" id="ban">
+  <div class="wrap">
+    <p class="eyebrow reveal">Banned</p>
+    <h2 class="title reveal"><span class="nw">講座の動画<em class="gold">93本</em>が</span><br><span class="nw">FBから一挙に<em class="gold">BAN</em>された</span><br><span class="nw">「問題❓」情報満載‼️</span></h2>
+    <div class="shots reveal d1">
+      <figure><img src="img/ph_ban1.webp" alt="Facebookの会員専用グループで、Bible Realityの動画が一斉に削除された画面" loading="lazy"></figure>
+      <figure><img src="img/ph_ban2.webp" alt="削除された動画を開くと「このコンテンツは現在ご利用いただけません」と表示される画面" loading="lazy"></figure>
+    </div>
   </div>
 </section>
 
