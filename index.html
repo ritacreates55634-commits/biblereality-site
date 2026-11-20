@@ -375,7 +375,16 @@ h2.title.topics-title{font-size:clamp(1.15rem,5.7vw,2.5rem)!important;line-heigh
 .kbc .menu img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s}
 .kbc .menu figure:hover img{transform:scale(1.04)}
 .kbc .kbcnote{margin-top:10px;font-size:.8rem;letter-spacing:.06em;color:var(--mute);text-align:right}
-@media(max-width:640px){.kbc .menu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kbc .menu{grid-template-columns:repeat(4,minmax(0,1fr))}
+.kbc .menu.more{margin-top:10px;display:flex;flex-wrap:wrap}
+.kbc .menu.more[hidden]{display:none}
+.kbc .menu.more figure{flex:1 1 calc(25% - 8px)}
+.kbc .kbcbtnwrap{margin-top:14px;text-align:center}
+.kbc .kbcbtn{font:inherit;font-weight:700;font-size:clamp(.95rem,3.8vw,1.05rem);letter-spacing:.08em;color:#f9c953;background:transparent;border:1px solid rgba(249,201,83,.6);border-radius:999px;padding:12px 28px;cursor:pointer;transition:background .3s}
+.kbc .kbcbtn:hover{background:rgba(249,201,83,.12)}
+.kbc .kbcbtn::after{content:" ＋"}
+.kbc .kbcbtn[aria-expanded="true"]::after{content:" －"}
+@media(max-width:640px){.kbc .menu{grid-template-columns:repeat(2,minmax(0,1fr))}.kbc .menu.more figure{flex-basis:calc(50% - 5px)}.kbc .menu figure.wide{grid-column:1/-1;aspect-ratio:2/1}}
 .hybrid{background:var(--bg2)}
 .two{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .pane{border-radius:20px;padding:clamp(24px,4vw,44px);border:1px solid var(--line);position:relative;overflow:hidden}
@@ -788,13 +797,25 @@ footer{font-size:.88rem}
       <h3><span class="nw">会場のキックバックカフェには</span><span class="nw">安心安全な</span><span class="nw">オーガニックメニューが</span><span class="nw">満載！</span></h3>
       <p class="kbclead"><span class="nw">お食事を楽しみながら、</span><span class="nw">講座をご観覧いただけます。</span></p>
       <div class="menu">
+        <figure><img src="img/ph_menu4.webp" alt="スパイスの効いたラーメン" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu10.webp" alt="バスクチーズケーキ" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu14.webp" alt="らかんかコーラと自家製ジンジャーエール" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu9.webp" alt="カラフルでおしゃれな店内" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="menu more" id="kbcmore" hidden>
         <figure><img src="img/ph_menu1.webp" alt="ケイジャンスパイスのフライドチキンプレート" loading="lazy" decoding="async"></figure>
         <figure><img src="img/ph_menu2.webp" alt="農家さんの情熱サラダ。グリルした季節野菜のサラダ" loading="lazy" decoding="async"></figure>
         <figure><img src="img/ph_menu3.webp" alt="ガパオライス" loading="lazy" decoding="async"></figure>
-        <figure><img src="img/ph_menu4.webp" alt="スパイスの効いたラーメン" loading="lazy" decoding="async"></figure>
         <figure><img src="img/ph_menu5.webp" alt="大和シチュー" loading="lazy" decoding="async"></figure>
         <figure><img src="img/ph_menu6.webp" alt="中居屋重兵衛カレー" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu7.webp" alt="アイスクリームのデザート" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu11.webp" alt="シフォンケーキ" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu12.webp" alt="マフィン" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu13.webp" alt="スコーン" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu8.webp" alt="コーヒーとラテのドリンク" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/ph_menu15.webp" alt="ベリーベリーアイスティとカフェモカ" loading="lazy" decoding="async"></figure>
       </div>
+      <div class="kbcbtnwrap"><button type="button" class="kbcbtn" id="kbcbtn" aria-expanded="false" aria-controls="kbcmore">ほかの写真も見る</button></div>
       <p class="kbcnote">メニューの一例です。内容は、時期により変わります。（写真：<a href="https://kickbackcafe.jp/" target="_blank" rel="noopener" style="color:inherit">KICK BACK CAFE公式サイト</a>）</p>
     </div>
   </div>
@@ -1192,6 +1213,11 @@ $$('.th').forEach(el=>{
 });
 
 })();
+</script>
+
+<script>
+(function(){var b=document.getElementById('kbcbtn'),m=document.getElementById('kbcmore');if(!b||!m)return;
+b.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');b.firstChild.nodeValue=o?'写真を閉じる':'ほかの写真も見る';});})();
 </script>
 </body>
 </html>
