@@ -235,6 +235,18 @@ h2.title.topics-title{font-size:clamp(1.15rem,5.7vw,2.5rem)!important;line-heigh
 .chip{padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-weight:700;font-size:.8rem;line-height:1.5;transition:.25s}
 .chip:hover{border-color:var(--gold2)}
 .chip[aria-pressed=true]{background:linear-gradient(180deg,#ffe58a,#e8a21a);color:#1b1100;border-color:transparent;transform:none}
+.eplistsec{background:var(--bg);padding:0 0 clamp(36px,5vw,60px);margin-top:-1px}
+.eplist{margin-top:0}
+.eplist summary{list-style:none;cursor:pointer;text-align:center;font-weight:700;font-size:clamp(.95rem,3.8vw,1.05rem);letter-spacing:.08em;color:#f9c953;border:1px solid rgba(249,201,83,.6);border-radius:999px;padding:12px 28px;width:fit-content;margin:0 auto;transition:background .3s}
+.eplist summary::-webkit-details-marker{display:none}
+.eplist summary:hover{background:rgba(249,201,83,.12)}
+.eplist summary::after{content:" ＋"}
+.eplist[open] summary::after{content:" －"}
+.eplist .cl{display:none}.eplist[open] .op{display:none}.eplist[open] .cl{display:inline}
+.eplist ol{list-style:none;margin-top:18px;padding:clamp(14px,2.4vw,22px);border-radius:14px;border:1px solid rgba(255,208,77,.3);background:linear-gradient(135deg,#171106,#0b0d14 70%);columns:1;column-gap:32px}
+@media(min-width:820px){.eplist ol{columns:2}}
+.eplist li{display:flex;gap:10px;font-size:.86rem;line-height:1.55;color:#d9d5ca;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06);break-inside:avoid}
+.eplist li b{flex:none;font-family:var(--disp);color:var(--gold2);min-width:4.4em}
 .topicpanel{margin-top:14px;border-radius:14px;border:1px solid rgba(255,208,77,.3);padding:clamp(14px,2.4vw,22px);background:linear-gradient(135deg,#171106,#0b0d14 70%);min-height:0}
 .topicpanel h3{font-family:var(--sans);font-weight:900;font-size:clamp(1.3rem,3.4vw,1.9rem);line-height:1.2}
 .topicpanel p{margin-top:6px;font-size:.9rem;line-height:1.7;color:#d9d5ca;max-width:42em}
@@ -302,6 +314,17 @@ h2.title.topics-title{font-size:clamp(1.15rem,5.7vw,2.5rem)!important;line-heigh
 .inst .nm b{display:block;font-family:var(--serif);font-size:clamp(1.45rem,3.2vw,2.2rem);line-height:1.2}
 .inst .nm span{color:var(--gold1);font-size:.74rem;letter-spacing:.14em}
 .inst blockquote{font-family:var(--serif);font-weight:800;font-size:clamp(1.3rem,3vw,2.1rem);line-height:1.7;border-left:3px solid var(--gold2);padding-left:22px;margin:22px 0}
+.inst .profdet{margin-top:clamp(24px,4vw,40px)}
+.inst .profdet summary{list-style:none;cursor:pointer;text-align:center;font-weight:700;font-size:clamp(.95rem,3.8vw,1.05rem);letter-spacing:.08em;color:#f9c953;border:1px solid rgba(249,201,83,.6);border-radius:999px;padding:12px 28px;width:fit-content;margin:0 auto;transition:background .3s}
+.inst .profdet summary::-webkit-details-marker{display:none}
+.inst .profdet summary:hover{background:rgba(249,201,83,.12)}
+.inst .profdet summary::after{content:" ＋"}
+.inst .profdet[open] summary::after{content:" －"}
+.inst .profdet .cl{display:none}.inst .profdet[open] .op{display:none}.inst .profdet[open] .cl{display:inline}
+.inst .profile{margin-top:18px;padding:clamp(18px,3vw,30px);border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02)}
+.inst .profile .eyebrow{margin-bottom:14px}
+.inst .profile p+p{margin-top:16px}
+.inst .profile p:not(.eyebrow){font-size:.95rem;line-height:1.95;color:#d9d5ca;max-width:52em}
 .inst .pts{display:grid;gap:12px;margin-top:20px;list-style:none}
 .inst .pts li{padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);font-size:.95rem}
 .inst .pts li b{color:var(--gold2)}
@@ -689,6 +712,17 @@ footer{font-size:.88rem}
       </ul>
     </div>
   </div>
+  <div class="wrap">
+    <details class="profdet reveal d2" id="profdet">
+      <summary><span class="op">講師のプロフィールを見る</span><span class="cl">講師のプロフィールを閉じる</span></summary>
+    <div class="profile">
+      <p class="eyebrow">Profile</p>
+      <p>10代の頃、序列主義の教育体制に疑問を抱き、日本初のフリースクール「寺子屋学園」を設立。<br>全米フリースクール連合議長パット・モンゴメリー女史との対談（続・教育に強制はいらない/一光社/1982年掲載）や、立松 和平（作家）、保坂 展人（元 衆議院議員）との対談（今・人間として/径書房1982年創刊第3号掲載）等、教育界において活発な活動を展開。<br>教育問題と並行して音楽活動にも力を注ぎ、新人歌手のバックなどのキャリアを積み、91年、ポリドール系のレーベルよりデビュー。</p>
+      <p>93年渡米し、一般カウンセリング・プリマリタル・カウンセリング・聖書学などを学び、インターンを経て牧師になる。<br>2000年に出版した処女作「この人と結婚していいの？」（新潮社）が24万部を超えるベストセラーに。著書多数。</p>
+      <p>アーティスト/プロデューサーとして、HEAVENESEを率い、日本国内のみならず、海外においても精力的に活動を展開している。<br>現在は、フリースクール代表をはじめ、牧師・カウンセラー・カフェオーナー・ミュージシャン・作家・企業セミナー講師など多岐に渡りKumikoと夫婦二人三脚で精力的に活躍。</p>
+    </div>
+    </details>
+  </div>
 </section>
 
 <!-- TRACK RECORD -->
@@ -779,6 +813,161 @@ footer{font-size:.88rem}
       <div class="ai"><h4>続けられるか不安でも大丈夫</h4><p>1か月だけ入って、やめてもかまいません。</p></div>
     </div>
     <p class="lead reveal d2" style="color:var(--gold1)">見逃した回も、あとで取り戻せる。それが、アーカイブ見放題です。</p>
+  </div>
+</section>
+
+<section class="eplistsec" id="eplistsec">
+  <div class="wrap">
+    <details class="eplist reveal d2" id="eplist">
+      <summary><span class="op">過去回のタイトル一覧を見る</span><span class="cl">過去回のタイトル一覧を閉じる</span></summary>
+      <ol>
+<li><b>第1回</b><span>聖書預言とは何なのか？</span></li>
+<li><b>第2回</b><span>預言解釈 基本のキ</span></li>
+<li><b>第3回</b><span>20世紀　最重要な預言とは？</span></li>
+<li><b>第4回</b><span>史上最大の欺瞞</span></li>
+<li><b>第5回</b><span>終わりの始まり</span></li>
+<li><b>第6回</b><span>クリス・リードの幻</span></li>
+<li><b>第7回</b><span>不気味なヨーロッパ</span></li>
+<li><b>第8回</b><span>獣の時代</span></li>
+<li><b>第9回</b><span>６６６の正体</span></li>
+<li><b>第10回</b><span>６６６の謎に迫る</span></li>
+<li><b>第11回</b><span>タイムライン</span></li>
+<li><b>第12回</b><span>７０週の預言 残された時間</span></li>
+<li><b>第13回</b><span>未来のニュース速報</span></li>
+<li><b>第14回</b><span>激流！ハイスピード</span></li>
+<li><b>第15回</b><span>終わりの時の特徴</span></li>
+<li><b>第16回</b><span>イスラエルvsガザ 何が起きているのか？</span></li>
+<li><b>第17回</b><span>ああエルサレム</span></li>
+<li><b>第18回</b><span>大艱難時代の幕開け</span></li>
+<li><b>第19回</b><span>人類の破滅 救われるのは誰か!?</span></li>
+<li><b>第20回</b><span>The Way Out 脱出への道</span></li>
+<li><b>第21回</b><span>The Way Out 2 脱出できるか！</span></li>
+<li><b>第22回</b><span>Point of No Return アフガニスタン崩壊 もう戻れない</span></li>
+<li><b>第23回</b><span>脱出へのカウントダウン</span></li>
+<li><b>第24回</b><span>瞬きの間に UFOとユーラシアに注目せよ</span></li>
+<li><b>第25回</b><span>The Return</span></li>
+<li><b>第26回</b><span>復讐の時</span></li>
+<li><b>第27回</b><span>小羊の婚姻</span></li>
+<li><b>第28回</b><span>天のしるし</span></li>
+<li><b>第29回</b><span>サタンの王座</span></li>
+<li><b>第30回</b><span>メシア来れり！</span></li>
+<li><b>第31回</b><span>悪女イゼベルと1000年王国</span></li>
+<li><b>第32回</b><span>その時日本は？</span></li>
+<li><b>第33回</b><span>秒読み開始！エゼキエル戦争プーチンはゴグなのか？</span></li>
+<li><b>第34回</b><span>迫る時！カナダ暴走ロシア侵攻</span></li>
+<li><b>第35回</b><span>プーチンは何者か⁈ ウクライナ侵攻の真相</span></li>
+<li><b>第36回</b><span>ロシア/ウクライナ情勢 ゴグの真実</span></li>
+<li><b>第37回</b><span>ロシア/ウクライナ情勢 ユダヤ問題の真相に迫る</span></li>
+<li><b>第38回</b><span>混乱のユーラシア ユダヤ人とは誰か</span></li>
+<li><b>第39回</b><span>回復の時 激動のユーラシア</span></li>
+<li><b>第40回</b><span>その時日本は２</span></li>
+<li><b>第41回</b><span>その後とは何か！ パレスチナ問題の真相 回復の預言 日本は？</span></li>
+<li><b>第42回</b><span>大混乱のカウントダウン その時日本は!?３</span></li>
+<li><b>第43回</b><span>混迷の深化 / サタンの正体</span></li>
+<li><b>第44回</b><span>７つの封印 / 秦氏の謎</span></li>
+<li><b>第45回</b><span>日本 / 隠された十字架の謎</span></li>
+<li><b>第46回</b><span>刻一刻 -ロシア/ウクライナ長期化 - イラン、そしてインドが！？ - 蘇るバアル礼拝</span></li>
+<li><b>第47回</b><span>とんでもない時代 / King CharlesⅢ の正体</span></li>
+<li><b>第48回</b><span>英王室の正体 / 誰も知らなかったエリザベス２世</span></li>
+<li><b>第49回</b><span>激震！欧州溶解 / 近づくその日！</span></li>
+<li><b>第50回</b><span>迫り来る天変地異</span></li>
+<li><b>第51回</b><span>遂に姿を現した世界宗教</span></li>
+<li><b>第52回</b><span>Exodus Route / 明らかになる古代史</span></li>
+<li><b>第53回</b><span>日本が保持したシナイ契約／神社の原型</span></li>
+<li><b>第54回</b><span>終末の様相／オカルトの台頭／神社の原型２</span></li>
+<li><b>第55回</b><span>不気味な兆候</span></li>
+<li><b>第56回</b><span>メシア到来への鍵なのか?重なる三つのしるし</span></li>
+<li><b>第57回</b><span>騙される時</span></li>
+<li><b>第58回</b><span>直前！第三次世界大戦</span></li>
+<li><b>第59回</b><span>大患難の１２６０日</span></li>
+<li><b>第60回</b><span>第三の災い / UFO問題の真相</span></li>
+<li><b>第61回</b><span>UFO問題の真相２</span></li>
+<li><b>第62回</b><span>UFO問題の真相３</span></li>
+<li><b>第63回</b><span>ネフィリムが戻ってくる？！</span></li>
+<li><b>第64回</b><span>完結！UFO問題の真相／二人の猿田彦</span></li>
+<li><b>第65回</b><span>LGBTQ+に騙されるな！</span></li>
+<li><b>第66回</b><span>LGBTQ+今明かされる真実 禁断の日本史</span></li>
+<li><b>第67回</b><span>黙示録１３章の世界</span></li>
+<li><b>第68回</b><span>激動の7年間の始まりか？！</span></li>
+<li><b>第69回</b><span>終末的大変化</span></li>
+<li><b>第70回</b><span>１４４０００人</span></li>
+<li><b>第71回</b><span>第バビロンの滅亡</span></li>
+<li><b>第72回</b><span>刻印を拒め！</span></li>
+<li><b>第73回</b><span>50年⽬のヨムキプル戦争の真相 / 激突イスラエルvsハマス</span></li>
+<li><b>第74回</b><span>中東問題の真相 / パレスチナ人とは誰か？</span></li>
+<li><b>第75回</b><span>聖書が明かすパレスチナ問題そして、、、</span></li>
+<li><b>第76回</b><span>ハマスvsイスラエル / 隠された暦の謎</span></li>
+<li><b>第77回</b><span>日本の暦に隠された聖書</span></li>
+<li><b>第78回</b><span>エスカレーション／エゼキエル戦争の胎動</span></li>
+<li><b>第79回</b><span>イエメン参戦 / もう戻れない?!</span></li>
+<li><b>第80回</b><span>ハルマゲドン１</span></li>
+<li><b>第81回</b><span>ハルマゲドン２</span></li>
+<li><b>第82回</b><span>ハルマゲドン３ / 大バビロンの崩壊</span></li>
+<li><b>第83回</b><span>第８の男 / ハルマゲドン４</span></li>
+<li><b>第84回</b><span>天空の警告</span></li>
+<li><b>第85回</b><span>驚くべき聖書の国イラン</span></li>
+<li><b>第86回</b><span>イランミステリー</span></li>
+<li><b>第87回</b><span>大バビロンの崩壊</span></li>
+<li><b>第88回</b><span>欧州激震 / 暗躍するスパイ</span></li>
+<li><b>第89回</b><span>大祭司トランプ誕生</span></li>
+<li><b>第90回</b><span>悪魔的世界</span></li>
+<li><b>第91回</b><span>悪魔的世界２ / 日本神話が明かすサタニズム</span></li>
+<li><b>第92回</b><span>神道が明かす驚愕の聖書預言</span></li>
+<li><b>第93回</b><span>再臨</span></li>
+<li><b>第94回</b><span>日本神話が明かす千年王国と再臨</span></li>
+<li><b>第95回</b><span>The Millennial Reign</span></li>
+<li><b>第96回</b><span>白い御座のさばき</span></li>
+<li><b>第97回</b><span>トランプリターンズ / 近づく大患難時代</span></li>
+<li><b>第98回</b><span>トランプリターンズ / 救済の使者？</span></li>
+<li><b>第99回</b><span>戦慄の聖書預言 / ダマスコの崩落！シリヤで何が？</span></li>
+<li><b>第100回</b><span>史上最大のフェイク~クリスマスSP~</span></li>
+<li><b>第101回</b><span>新しい天と新しい地</span></li>
+<li><b>第102回</b><span>トランプ2.0 新世界秩序出現か！</span></li>
+<li><b>第103回</b><span>トランプ2.0 知ったらやばい</span></li>
+<li><b>第104回</b><span>トランプ2.0 The Twilight Zone</span></li>
+<li><b>第105回</b><span>来るべき永遠の都</span></li>
+<li><b>第106回</b><span>来るべき最終章</span></li>
+<li><b>第107回</b><span>復活ローマ帝国の威風</span></li>
+<li><b>第108回</b><span>復活の謎</span></li>
+<li><b>第109回</b><span>復活の謎に迫る</span></li>
+<li><b>第110回</b><span>壮大な欺き / 激変する世界</span></li>
+<li><b>第111回</b><span>最後の教皇</span></li>
+<li><b>第112回</b><span>１２日戦争の行方</span></li>
+<li><b>第113回</b><span>近づくイラン大崩壊</span></li>
+<li><b>第114回</b><span>黙示録完結！/ 今明かされるハマスが攻撃した本当の理由</span></li>
+<li><b>第115回</b><span>2025.8.15世界的会談 世界の行方 ついに○○誕生‼︎</span></li>
+<li><b>第116回</b><span>陰謀一番地</span></li>
+<li><b>第117回</b><span>迫り来るエゼキエル戦争 / 日本の役割</span></li>
+<li><b>第118回</b><span>一部 日本に来たフェニキア人／二部 西城秀樹の死とチャーリー・カーク暗殺つながるDEATH CULT</span></li>
+<li><b>第119回</b><span>暗躍するDEATH CULT</span></li>
+<li><b>第120回</b><span>中東和平 とてつもないこと</span></li>
+<li><b>第121回</b><span>それは必ずやってくる 最後の７年が始まった？</span></li>
+<li><b>第122回</b><span>迫り来るXデー</span></li>
+<li><b>第123回</b><span>ギャラクシーマインド時代到来</span></li>
+<li><b>第124回</b><span>戦場のメリークリスマス</span></li>
+<li><b>第125回</b><span>2026アラびっくり</span></li>
+<li><b>第126回</b><span>虚構？ISLAM</span></li>
+<li><b>第127回</b><span>最古コーランの罠 33節の真実</span></li>
+<li><b>第128回</b><span>密命なのか？タッカー・カールソン</span></li>
+<li><b>第129回</b><span>日本人が知らないイラン戦争の真実</span></li>
+<li><b>第130回</b><span>聖絶とは何か？</span></li>
+<li><b>第131回</b><span>イラン戦争停戦？シオニズムの真実１</span></li>
+<li><b>第132回</b><span>シオニズムの真実２ 約束の地</span></li>
+<li><b>第133回</b><span>シオニズムの真実３ 大イスラエル構想</span></li>
+<li><b>第134回</b><span>シオニズムの真実４ 混乱の原因</span></li>
+<li><b>第135回</b><span>イスラエルは誰の国か？／シオニズムの真実５</span></li>
+<li><b>第136回</b><span>米vsイラン合意の裏／ペルシアから来た神仏の根源</span></li>
+<li><b>第137回</b><span>シオニズムの真実６ 根本的誤り</span></li>
+<li><b>第138回</b><span>世界秩序破壊</span></li>
+<li><b>第139回</b><span>イラン戦争 米国敗北の嘘</span></li>
+<li><b>第140回</b><span>始まった！中東大紛争への序章</span></li>
+<li><b>第141回</b><span>世界が報じないエルサレムの今</span></li>
+<li><b>第142回</b><span>世界が消したいイスラエルの歴史</span></li>
+<li><b>第143回</b><span>ソロモンの海　海底考古学の衝撃</span></li>
+<li><b>第144回</b><span>地底からの叫び声　大逆転の世界史</span></li>
+<li><b>第145回</b><span>真の勝利者は誰か？</span></li>
+      </ol>
+    </details>
   </div>
 </section>
 
@@ -897,8 +1086,8 @@ footer{font-size:.88rem}
   <div class="wrap" style="max-width:820px;text-align:center">
     <p class="eyebrow reveal" style="justify-content:center">Free</p>
     <h2 class="title reveal" style="font-size:clamp(1.5rem,4vw,2.5rem)"><span class="nw">いきなり</span><span class="nw">有料講座は、</span><br><span class="nw">ちょっと…</span><span class="nw">という方へ。</span></h2>
-    <p class="lead reveal d1" style="margin-inline:auto;text-align:center"><span class="nw">まずは無料で、</span><span class="nw">雰囲気を確かめてみてください。</span><br><span class="nw">毎週日曜20:00から、</span><span class="nw">YouTubeで</span><span class="nw">「<b style="color:var(--gold2)">HEAVENESE Style</b>」を</span><span class="nw">配信しています。</span><br><span class="nw">日本のテレビでは流れない</span><span class="nw">世界のニュースや、</span><span class="nw">教科書では習わない</span><span class="nw">日本の偉人たちの生き方を、</span><span class="nw">毎週ご紹介しています。</span></p>
-    <p class="reveal d2" style="margin-top:28px"><a class="btn gold-btn" href="https://heavenese.tv/#/" target="_blank" rel="noopener">HEAVENESE Style を見る（無料）→</a></p>
+    <p class="lead reveal d1" style="margin-inline:auto;text-align:center"><span class="nw">まずは無料で、</span><span class="nw">雰囲気を確かめてみてください。</span><br><span class="nw">毎週日曜20:00から、</span><span class="nw">YouTubeで</span><span class="nw">「<b style="color:var(--gold2)">HEAVENESE style</b>」を</span><span class="nw">配信しています。</span><br><span class="nw">日本のテレビでは流れない</span><span class="nw">世界のニュースや、</span><span class="nw">教科書では習わない</span><span class="nw">日本の偉人たちの生き方を、</span><span class="nw">毎週ご紹介しています。</span></p>
+    <p class="reveal d2" style="margin-top:28px"><a class="btn gold-btn" href="https://heavenese.tv/#/" target="_blank" rel="noopener">HEAVENESE style を見る（無料）→</a></p>
   </div>
 </section>
 
@@ -1196,6 +1385,9 @@ const T=[
  ['日本と聖書','日本人としての聖書の読み方。日本はこれから、どんな役割を持つのかを考えます。',[[32,'その時日本は？'],[42,'大混乱のカウントダウン その時日本は!?３'],[53,'日本が保持したシナイ契約／神社の原型'],[64,'完結！UFO問題の真相／二人の猿田彦'],[76,'ハマスvsイスラエル / 隠された暦の謎'],[94,'日本神話が明かす千年王国と再臨'],[117,'迫り来るエゼキエル戦争 / 日本の役割'],[136,'米vsイラン合意の裏／ペルシアから来た神仏の根源']]],
  ['考古学','発掘された遺跡や遺物と、聖書の記述を照らし合わせます。古代史の見え方が変わります。',[[52,'Exodus Route / 明らかになる古代史'],[108,'復活の謎'],[109,'復活の謎に迫る'],[110,'壮大な欺き / 激変する世界'],[141,'世界が報じないエルサレムの今'],[142,'世界が消したいイスラエルの歴史'],[143,'ソロモンの海　海底考古学の衝撃'],[144,'地底からの叫び声　大逆転の世界史']]],
 ];
+/* 「すべて」: 全回のタイトル(アーカイブ項目の一覧から作る) */
+const allEps=[...document.querySelectorAll('#eplist li')].map(li=>[parseInt(li.querySelector('b').textContent.replace(/\D/g,''),10),li.querySelector('span').textContent]);
+T.unshift(['すべて','全'+allEps.length+'回のタイトルを、すべて並べています。気になる回を探してみてください。',allEps]);
 const chips=$('#chips'),tp=$('#tpanel');
 T.forEach((t,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=t[0];b.setAttribute('aria-pressed','false');b.onclick=()=>showT(i);chips.appendChild(b)});
 function showT(i){
@@ -1203,7 +1395,7 @@ function showT(i){
   const t=T[i];
   tp.innerHTML=`<div class="fadeswap"><h3 class="gold">${t[0]}</h3><p>${t[1]}</p>${t[2].length?'<ul>'+t[2].slice().sort((a,b)=>a[0]-b[0]).map(l=>`<li><b>第${l[0]}回</b><span>${l[1]}</span></li>`).join('')+'</ul>':'<p style="color:var(--mute);font-size:.9rem">関連する話題は、講座の中で随時取り上げます。</p>'}</div>`;
 }
-showT(0);
+showT(1);
 
 
 
