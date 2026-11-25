@@ -486,9 +486,9 @@ footer .links{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin
 footer p{max-width:44em;margin:10px auto 0;line-height:1.8}
 
 /* sticky bottom CTA (mobile) */
-.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:80;display:none;transform:translateY(140%);transition:transform .5s}
-.sticky.show{transform:none}
-.sticky .btn{width:100%;padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.6),0 0 0 1px rgba(255,230,150,.5) inset}
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:80;display:none;transform:translateY(140%);opacity:0;visibility:hidden;pointer-events:none;transition:transform .5s,opacity .3s,visibility 0s .5s}
+.sticky.show{transform:none;opacity:1;visibility:visible;pointer-events:auto;transition:transform .5s,opacity .3s,visibility 0s}
+.sticky .btn{width:100%;padding:8px 14px;min-height:0;box-shadow:0 12px 40px rgba(0,0,0,.6),0 0 0 1px rgba(255,230,150,.5) inset}
 
 /* responsive */
 @media(max-width:860px){
@@ -1121,7 +1121,7 @@ footer{font-size:.88rem}
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn gold-btn cta" href="https://smart.reservestock.jp/conclusion_form/index/5777" target="_blank" rel="noopener"><span style="text-align:center;line-height:1.4;font-size:.95rem">世界の真実を読み解く<br>Bible Realityお申込みページへ</span></a></div>
+<div class="sticky" id="sticky"><a class="btn gold-btn cta" href="https://smart.reservestock.jp/conclusion_form/index/5777" target="_blank" rel="noopener"><span style="text-align:center;line-height:1.3;font-size:.88rem">世界の真実を読み解く<br>Bible Realityお申込みページへ</span></a></div>
 
 <script>
 (()=>{
@@ -1345,7 +1345,7 @@ function onScroll(){
   prog.style.width=(y/h*100)+'%';
   hdr.classList.toggle('solid',y>40);
   if(y<innerHeight*1.2){const g=document.getElementById('gl');if(g)g.style.transform=`translate3d(0,${y*.18}px,0)`;bg.style.transform=`translate3d(0,${y*.25}px,0) scale(${1+y/4000})`}
-  st.classList.toggle('show',y>innerHeight*.8&&y<h-innerHeight*1.1);
+  st.classList.toggle('show',y>innerHeight*1.05&&y<h-innerHeight*1.1);
 }
 let scT=false;addEventListener('scroll',()=>{if(scT)return;scT=true;requestAnimationFrame(()=>{scT=false;onScroll()})},{passive:true});onScroll();
 
